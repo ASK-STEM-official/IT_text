@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noarchive">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <h2>CREATE文</h2>
+    <p>よっぽどのことがなければ使うことのない、何かしら作成をするときに使うCREATE文の構文例です。</p>
+    <h3>スキーマの作成</h3>
+    <p>スキーマの作成は<b>CREATE</b>を用いて実行します。</p>
+    <p>クエリ<br><b>CREATE SCHEMA `お好みのスキーマ名` ;</b></p>
+    <div class="rounded-box">
+        <p><b>`</b>左のこれが打てない人へ<br>
+        これはShift+7で打てるシングルクォーテーションではなく、
+        shift+@で打てるバッククォートです。</p>
+        <p>シングルクーテーションはオレンジ、バッククォートは茶色で表示されます。</p>
+    </div>
+  <h2>データベースの作成</h2>
+    <p>データベースの作成はやっぱり<b>CREATE</b>を使います。下に一例をあげておきます。</p>
+    <div class="rounded-box">
+      <p>CREATE TABLE `スキーマ名(なくてもいいよ)`.`作りたいテーブルの名前` (<br>
+        `id` INT NOT NULL,<br>
+        `name` VARCHAR(45) NOT NULL,<br>
+        `date` DATE NOT NULL,<br>
+        PRIMARY KEY (`id`));</p>
+  </div>
+  <p>()内は作りたいテーブルの列の設定を列挙しています。コンマを忘れないで書きましょう。<br>
+    一つの列を作るときには<mark>`列名` (データ型) (列制約),</mark>が必要です。列制約は省いても作れます。
+  </p>
+
+  <p>最後の行に書かれている<mark>PRIMARY KEY (`id`)</mark>とは、idという列を<mark>主キー</mark>とするものです。<br>
+  主キーとは学校の学籍番号のように、<mark>絶対に被らないそのデータ固有の数字</mark>のことです。<br>
+  例えばこの学校に全く同じ学籍番号を持っている人が複数人いたら、成績や名前などのデータを管理するときにとても不便です。<br>
+  主キーを用いれば、学籍番号だけで個人を特定できます。<br>
+  また、SQLで「ある一つのデータ」を選択するのは意外に難しく、主キーを用いない場合、<mark>絶対に1つしかでてこないデータの組み合わせ</mark>を探して選択しなければいけません。<br>
+  データの管理のためにも主キーを活用しましょう。
+  </p>
+</main>
+</body>
+</html>
+
